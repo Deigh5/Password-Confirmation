@@ -1,0 +1,28 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{ title }}!
+  </h1>
+</div>
+
+ <form [formGroup]="passwordForm">
+    <mat-form-field>
+      <p *ngIf="!passwordForm.valid">*Required</p>
+      <input matInput formControlName="email" placeholder="E-mail Address"/>
+    </mat-form-field><br>
+
+    <mat-form-field>
+      <p *ngIf="!passwordForm.valid">*Required</p>
+      <input matInput formControlName="password" type="password" placeholder="Password"/><br>
+    </mat-form-field><br>
+
+    <mat-form-field>
+      <p *ngIf="!passwordForm.valid">*Required</p>
+      <input matInput formControlName="cPassword" type="password" placeholder="Confirm Password"/><br>
+    </mat-form-field><br>
+
+<button [disabled] = "!passwordForm.valid" (click)="login(password,cPassword)">Login</button>
+ </form>
+
+
+<router-outlet></router-outlet>
